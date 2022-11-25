@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Pitaara" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <item name="android:textViewStyle">@style/PoppinsTextViewStyle</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent</item>
+    </style>
+
+    <style name="PoppinsTextViewStyle"  parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="CheckboxTheme" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.CheckBox</item>
+    </style>
+
+    <style name="ThemeOverlay.CheckBox" parent="">
+        <item name="colorSecondary">@color/white</item>   <!-- checked -->
+        <item name="colorOnSurface">@color/black</item>  <!-- unchecked -->
+    </style>
+
+</resources>

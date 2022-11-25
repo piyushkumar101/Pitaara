@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/black_rounded_btn.xml" value="0.182" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/chat_bg.xml" value="0.201" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/circular_bg.xml" value="0.186" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/circular_progress_bar.xml" value="0.186" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/edittext_bg.xml" value="0.2895" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/gen_container_bg_1.xml" value="0.346" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/gender_sel_item.xml" value="0.288" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/get_started_bg.xml" value="0.186" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/horizontal_div_1.xml" value="0.2895" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_chat.xml" value="0.282" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_facebook.xml" value="0.2895" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_google.xml" value="0.2895" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_landing_02_shadow.xml" value="0.1465" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_launcher_background.xml" value="0.169" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_lighter_background.xml" value="0.288" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_login.xml" value="0.2895" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_logo_icon_1.xml" value="0.186" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_message.xml" value="0.201" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_message_rotated.xml" value="0.201" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_onboarding_01.xml" value="0.2" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_onboarding_02.xml" value="0.2" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_onboarding_02_shadow.xml" value="0.18" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_onboarding_03.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_onboarding_04.xml" value="0.169" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_png.xml" value="0.169" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_profile.xml" value="0.2895" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_right.xml" value="0.186" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_search.xml" value="0.288" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_splash_bg.xml" value="0.22" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_star_filled.xml" value="0.1315" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_start_empty.xml" value="0.1315" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/ic_start_half_empty.xml" value="0.1315" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/item_bg_1.xml" value="0.288" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/no_items_picker_bg.xml" value="0.182" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/notif_unread_bg.xml" value="0.288" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/notification_bg.xml" value="0.288" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/onboard_frag1_fore.xml" value="0.186" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/radio_btn_bg.xml" value="0.2725" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/rating_bar.xml" value="0.1315" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/red_btn.xml" value="0.346" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/round_stroke_btn_bg.xml" value="0.2895" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/round_stroke_btn_black.xml" value="0.346" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/round_stroke_btn_white_bg.xml" value="0.346" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/round_stroke_btn_white_black.xml" value="0.346" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/search_bg.xml" value="0.3115" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/wishlist_btn_bg.xml" value="0.2745" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout-h890dp/activity_payment_screen.xml" value="0.9" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout-hdpi/activity_registration_screen.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout-hdpi/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout-small/activity_payment_screen.xml" value="2.392857142857143" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout-w400dp/activity_payment_screen.xml" value="0.2864471996579735" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout-xxhdpi/activity_login_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout-xxhdpi/activity_registration_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_address_screen.xml" value="0.2" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_cart_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_categories_screen.xml" value="0.2864471996579735" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_help_support_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_legal_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_login_screen.xml" value="1.0" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_notifications_screen.xml" value="0.14" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_onboarding_screen.xml" value="0.17760416666666667" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_payment_screen.xml" value="0.2" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_registration_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_splash_screen.xml" value="1.2857142857142858" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/call_me_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/cart_recycler_item.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/cart_screen.xml" value="0.16032492518170158" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/category_item.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/chat_bot_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag1.xml" value="0.22" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag2.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag3.xml" value="0.22" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag4.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag5.xml" value="0.22" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/gender_screen.xml" value="0.22" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/header_screen.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/message_item.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/notif_unread_bg.xml" value="0.23300555793073963" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/notification_item.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/wishlist_item.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

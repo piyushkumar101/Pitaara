@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.busy.looping.pitaara">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="false"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Pitaara">
+        <activity
+            android:name=".Activities.HelpSupportScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.NotificationsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.AddressScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.CartScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.PaymentScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.CategoriesScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LegalScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LoginScreen"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.OnboardingScreen"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
