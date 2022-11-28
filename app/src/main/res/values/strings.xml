@@ -67,6 +67,18 @@
     <string name="add_to_cart">Add To Cart</string>
     <string name="rand_time1">1:32 PM</string>
     <string name="sutpitara_virtual_assistant">Sutpitara Virtual Assistant</string>
+    <string name="otp_page_desc">Enter the 6-digit code we have sent to +1 206-312-9956 to complete the process</string>
+    <string name="enter_your_6_digit_otp">Enter your 6 Digit OTP</string>
+    <string name="generate_otp">Generate OTP</string>
+    <string name="login_using_your_mobile_no">Login Using your mobile no.</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="verify_create_account"><![CDATA[Verify & Create Account]]></string>
+    <string name="centred_asterik">∗</string>
+    <string name="didn_t_recieved_code">Didn’t received code?</string>
+    <string name="req_again">Request Again</string>
+    <string name="get_code_via">Get code via</string>
+    <string name="call">Call</string>
+    <string name="verify_your_number">Verify your Number</string>
 
 
     <style name="lorem">lorem</style>

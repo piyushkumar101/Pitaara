@@ -40,6 +40,8 @@
         <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/notif_unread_bg.xml" value="0.288" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/notification_bg.xml" value="0.288" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/onboard_frag1_fore.xml" value="0.186" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/otp_bg.xml" value="0.203" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/otp_input_bg.xml" value="0.203" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/radio_btn_bg.xml" value="0.2725" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/rating_bar.xml" value="0.1315" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/drawable/red_btn.xml" value="0.346" />
@@ -83,6 +85,8 @@
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/message_item.xml" value="0.33" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/notif_unread_bg.xml" value="0.23300555793073963" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/notification_item.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/otp_page.xml" value="0.22" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/verify_otp_page.xml" value="0.22" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/wishlist_item.xml" value="0.33" />
       </map>
     </option>
