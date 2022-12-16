@@ -64,7 +64,7 @@
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_help_support_screen.xml" value="0.25" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_legal_screen.xml" value="0.25" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_login_screen.xml" value="1.0" />
-        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_main.xml" value="0.1986970684039088" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_notifications_screen.xml" value="0.14" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_onboarding_screen.xml" value="0.17760416666666667" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/activity_payment_screen.xml" value="0.2" />
@@ -75,6 +75,7 @@
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/cart_screen.xml" value="0.16032492518170158" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/category_item.xml" value="0.33" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/chat_bot_screen.xml" value="0.25" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_nav_drawer.xml" value="0.33" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag1.xml" value="0.22" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag2.xml" value="0.25" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/fragment_onboarding_frag3.xml" value="0.22" />
@@ -86,7 +87,8 @@
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/notif_unread_bg.xml" value="0.23300555793073963" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/notification_item.xml" value="0.33" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/otp_page.xml" value="0.22" />
-        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/verify_otp_page.xml" value="0.22" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/product_item.xml" value="0.33" />
+        <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/verify_otp_page.xml" value="0.25" />
         <entry key="..\:/android apps/Pitaara/app/src/main/res/layout/wishlist_item.xml" value="0.33" />
       </map>
     </option>
