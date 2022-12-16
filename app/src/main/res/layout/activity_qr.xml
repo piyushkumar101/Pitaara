@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/primaryBg"
+    android:layout_height="match_parent"
+    tools:context=".Activities.QrActivity">
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/tvScanQr"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         android:text="SCAN QR CODE"
+         android:layout_marginTop="60dp"
+         android:textColor="@color/black"
+         android:textSize="25sp"
+         android:fontFamily="@font/poppins_bold"/>
+    <ImageView
+        android:layout_width="0dp"
+       android:layout_marginTop="23dp"
+        android:id="@+id/ivQrcode"
+        android:adjustViewBounds="true"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScanQr"
+        android:src="@drawable/qr"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/Upiidcontainer"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="38dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dashedborder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivQrcode">
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tvUpi"
+            android:layout_marginStart="130dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toStartOf="@id/ivCopy"
+            android:text="pqr@ybal"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+        <ImageView
+            android:id="@+id/ivCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/copy"
+            android:layout_marginEnd="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="25dp"
+            app:layout_constraintBottom_toBottomOf="@id/tvUpi"
+            app:layout_constraintStart_toEndOf="@id/tvUpi"
+            app:layout_constraintTop_toTopOf="@id/tvUpi" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnChooseScreenshot"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/Upiidcontainer"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Choose Screen Shot *"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSubmit"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnChooseScreenshot"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="@color/black"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Submit"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

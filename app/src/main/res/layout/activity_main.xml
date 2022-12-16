@@ -35,7 +35,8 @@
             app:layout_constraintEnd_toStartOf="@+id/search_icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:autofillHints="" />
 
         <ImageView
             android:id="@+id/search_icon"
@@ -81,7 +82,6 @@
                 android:id="@+id/banner_main"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/guide2"
                 app:layout_constraintStart_toStartOf="@+id/guide1"
@@ -110,9 +110,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categories_recyclerView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                android:layout_marginStart="13dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:foregroundGravity="center"
                 android:overScrollMode="never"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primaryBg"
+    tools:context=".Activities.Productdiscripiton">
+    <include layout="@layout/header_screen" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchBoxContainer"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintWidth_percent="0.75"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@id/Nestedlayout"
+        android:background="@drawable/search_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_container">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@null"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="@string/search_main_hint"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:paddingHorizontal="10dp"
+            android:textColorHint="#99FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/search_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck"
+            android:autofillHints="" />
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingHorizontal="10dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:id="@+id/Nestedlayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBoxContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+
+            android:id="@+id/scrollableContainer"
+            android:layout_height="match_parent">
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/banner_main"
+                android:layout_width="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_sample" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <View
+                android:layout_width="110dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/black"
+                android:id="@+id/blackdivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/banner_main"
+                android:layout_marginTop="15dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDolar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/blackdivider"
+                app:layout_constraintBottom_toBottomOf="@id/blackdivider"
+                android:textColor="@color/black"
+                android:layout_marginRight="70dp"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppins_regular"
+               app:layout_constraintTop_toBottomOf="@id/banner_main"
+                android:text="$ 10"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/black"
+                android:id="@+id/divider1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/blackdivider"
+                android:layout_marginTop="35dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/black"
+                android:id="@+id/divider2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider1"
+                android:layout_marginTop="15dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/black"
+                android:id="@+id/divider3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider2"
+                android:layout_marginTop="15dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/black"
+                android:id="@+id/smallWidth"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider3"
+                android:layout_marginTop="35dp"
+                />
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@id/guide1"
+                app:layout_constraintGuide_percent="0.5"
+                app:layout_constraintStart_toEndOf="@id/btnBuynow"
+                app:layout_constraintEnd_toStartOf="@id/btnAddtocart"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnBuynow"
+                android:textColor="@color/white"
+                android:paddingTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingBottom="10dp"
+                android:layout_marginRight="5dp"
+                app:layout_constraintEnd_toStartOf="@id/guide1"
+                android:backgroundTint="@color/black"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/smallWidth"
+                android:text="Buy Now"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnAddtocart"
+                android:paddingTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/guide1"
+                android:textColor="@color/white"
+                android:paddingBottom="10dp"
+                android:backgroundTint="@color/black"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+               app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/smallWidth"
+                android:text="ADD TO CART"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnBuynow"
+                android:layout_marginTop="20dp"
+                android:id="@+id/tvProductReview"
+                android:layout_marginLeft="16dp"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Product Review"/>
+            <View
+                android:layout_width="match_parent"
+                android:id="@+id/reviews"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@id/tvProductReview"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/black"
+                app:layout_goneMarginTop="40dp"
+                android:id="@+id/smallWidth1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reviews"
+                android:layout_marginTop="35dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/smallWidth1"
+                android:text="Goes Well With"
+                android:id="@+id/tvGoesWithWell"
+                android:textSize="16dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"
+                android:layout_marginLeft="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/goeswithwith"
+                android:layout_width="match_parent"
+                android:layout_marginStart="13dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                tools:listitem="@layout/category_item"
+                android:foregroundGravity="center"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGoesWithWell" />
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/tvGoeswithmorelikes"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toBottomOf="@id/goeswithwith"
+                 android:text="More like goes"
+                 android:layout_marginStart="16dp"
+                 android:layout_marginTop="10dp"
+                 android:textColor="@color/black"
+                 android:fontFamily="@font/poppins_regular"
+                 android:textStyle="bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/morelikesthis"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:listitem="@layout/category_item"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGoeswithmorelikes"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
