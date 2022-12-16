@@ -77,10 +77,13 @@
     <string name="didn_t_recieved_code">Didn’t received code?</string>
     <string name="req_again">Request Again</string>
     <string name="get_code_via">Get code via</string>
-    <string name="call">Call</string>
     <string name="verify_your_number">Verify your Number</string>
     <string name="product_title">Product title</string>
     <string name="sample_price">$ 10</string>
+    <string name="region">Region</string>
+    <string name="us">United States</string>
+    <string name="currency">Currency</string>
+    <string name="usd">$ (USD)</string>
 
 
     <style name="lorem">lorem</style>

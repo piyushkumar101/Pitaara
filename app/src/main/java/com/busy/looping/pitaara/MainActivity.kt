@@ -13,6 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val displayMetrics = DisplayMetrics()
 
-        setContentView(R.layout.chat_bot_screen)
+        setContentView(R.layout.product_item)
     }
 }

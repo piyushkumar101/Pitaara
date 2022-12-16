@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    app:cardCornerRadius="20dp"
-    app:strokeWidth="0dp"
-    app:cardElevation="0dp"
+    android:layout_height="wrap_content"
     android:backgroundTint="@android:color/transparent"
-    android:layout_height="wrap_content">
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,11 +33,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banner_sample"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/banner_sample" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -104,14 +104,58 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ellipsize="end"
+                android:fontFamily="@font/poppins_light"
                 android:maxLines="3"
                 android:text="@string/lorem"
-                android:fontFamily="@font/poppins_light"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productPrice" />
+
+            <TextView
+                android:id="@+id/buy_now_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/black_rounded_btn"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="@string/buy_now"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/add_to_cart_btn"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productDesc"
+                app:layout_constraintWidth_max="200dp"
+                app:layout_constraintWidth_percent="0.4"
+                tools:targetApi="o" />
+
+            <TextView
+                android:id="@+id/add_to_cart_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/black_rounded_btn"
+                android:fontFamily="@font/inter_regular"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buy_now_btn"
+                app:layout_constraintTop_toTopOf="@+id/buy_now_btn"
+                app:layout_constraintWidth_max="200dp"
+                app:layout_constraintWidth_percent="0.4"
+                tools:targetApi="o" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
