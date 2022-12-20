@@ -20,6 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pitaara">
         <activity
+            android:name=".Activities.ProductitemActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.QrActivity"
             android:exported="false">
             <meta-data

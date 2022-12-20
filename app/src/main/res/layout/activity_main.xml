@@ -53,9 +53,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.core.widget.NestedScrollView
-        android:layout_marginTop="30dp"
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:overScrollMode="never"
         app:layout_constraintTop_toBottomOf="@+id/searchBoxContainer">
 
@@ -78,23 +79,44 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.95" />
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/banner_main"
-                android:layout_width="0dp"
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:paddingRight="16dp"
+                android:paddingLeft="16dp"
+                android:id="@+id/bannerViewPager"
+                app:layout_constraintBottom_toTopOf="@+id/categories_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            />
+            <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="@+id/guide2"
-                app:layout_constraintStart_toStartOf="@+id/guide1"
-                app:layout_constraintTop_toTopOf="parent">
+                android:id="@+id/dotIndicator"
+                app:progressMode="false"
+                app:dotsSpacing="3dp"
+                app:dotsSize="10dp"
+                app:dotsStrokeWidth="1dp"
+                app:dotsStrokeColor="@color/white"
+               android:layout_marginTop="5dp"
+                app:dotsColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bannerViewPager"/>
+<!--                        <com.google.android.material.card.MaterialCardView-->
+<!--                            android:id="@+id/banner_main"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            app:cardCornerRadius="20dp"-->
+<!--                            app:layout_constraintEnd_toEndOf="@+id/guide2"-->
+<!--                            app:layout_constraintStart_toStartOf="@+id/guide1"-->
+<!--                            app:layout_constraintTop_toTopOf="parent">-->
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/banner_sample" />
+<!--                           -->
 
-            </com.google.android.material.card.MaterialCardView>
+<!--                        </com.google.android.material.card.MaterialCardView>-->
+
 
             <TextView
                 android:id="@+id/categories_title"
@@ -106,13 +128,13 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/guide1"
-                app:layout_constraintTop_toBottomOf="@+id/banner_main" />
+                app:layout_constraintTop_toBottomOf="@+id/bannerViewPager" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/categories_recyclerView"
                 android:layout_width="0dp"
-                android:layout_marginStart="13dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
                 android:layout_marginTop="10dp"
                 android:foregroundGravity="center"
                 android:overScrollMode="never"
@@ -199,8 +221,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/limited_time_recyclerView" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
                 android:id="@+id/y_shop_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/guide2"
@@ -208,19 +230,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/y_purchase_title">
 
                 <com.google.android.material.card.MaterialCardView
-                    app:cardCornerRadius="20dp"
-                    app:layout_constraintVertical_bias="0"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     android:id="@+id/y_us_img_container"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:layout_constraintWidth_percent="0.4"
-                    app:layout_constraintWidth_default="percent"
-                    app:layout_constraintHorizontal_bias="0"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0"
+                    app:layout_constraintWidth_default="percent"
+                    app:layout_constraintWidth_percent="0.4">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -231,18 +253,18 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="start|top"
+                    android:text="@string/lorem"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/y_us_img_container"
-                    android:gravity="start|top"
-                    android:layout_width="0dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/poppins_light"
-                    android:layout_height="wrap_content"
-                    android:text="@string/lorem"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -250,11 +272,13 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                app:layout_constraintTop_toBottomOf="@+id/y_shop_content"/>
+                app:layout_constraintTop_toBottomOf="@+id/y_shop_content" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

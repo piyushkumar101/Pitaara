@@ -9,8 +9,10 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busy.looping.pitaara.Activities.Productdiscripiton
+import com.busy.looping.pitaara.Activities.ProductitemActivity
 import com.busy.looping.pitaara.Adpter.Categories
 import com.busy.looping.pitaara.Adpter.CategoriesSingleItem
+import com.busy.looping.pitaara.Adpter.SilderApter
 import com.busy.looping.pitaara.databinding.ActivityMainBinding
 import com.busy.looping.pitaara.itemdecoration.SimpleDividerItemDecoration
 import com.busy.looping.pitaara.models.CategoryModel
@@ -20,6 +22,7 @@ import java.security.AccessController.getContext
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var categoryAdpter: CategoriesSingleItem;
+    lateinit var  bannerSilderAdpter: SilderApter
     lateinit var mostPopularAdpter:Categories;
     lateinit var topOfferAdpter:Categories;
     lateinit var  limitedOfferAdpter:Categories;
@@ -34,12 +37,20 @@ class MainActivity : AppCompatActivity() {
         val displayMetrics = DisplayMetrics()
 
         setContentView(binding.root)
+        setViewPagerBanners()
         setCategoryRecyclview()
         setMostPopularRecycleview()
         setTopofferRecycleview()
         setLimitedOfferRecycleview()
        // categoriesList = ArrayList<CategoryModel>()
 
+    }
+    fun setViewPagerBanners()
+    {
+       bannerSilderAdpter=SilderApter()
+        Toast.makeText(this,"CALLED",Toast.LENGTH_SHORT).show()
+        binding.bannerViewPager.adapter=bannerSilderAdpter
+        binding.dotIndicator.setViewPager(binding.bannerViewPager)
     }
     fun setTopofferRecycleview()
     {
@@ -106,6 +117,8 @@ class MainActivity : AppCompatActivity() {
         limitedOfferAdpter = Categories(this, limtedOfferList, object : Categories.ItemClickListener {
             override fun onItemListener(tag: Int) {
                 super.onItemListener(tag)
+                var intent=Intent(applicationContext,ProductitemActivity::class.java)
+                startActivity(intent)
                 //Toast.makeText(applicationContext,tag.toString(),Toast.LENGTH_SHORT).show()
             }
         })
@@ -143,7 +156,7 @@ class MainActivity : AppCompatActivity() {
         categoryAdpter = CategoriesSingleItem(this, categoriesList, object : CategoriesSingleItem.ItemClickListener {
             override fun onItemListener(tag: Int) {
                 super.onItemListener(tag)
-                var intent=Intent(applicationContext,Productdiscripiton::class.java)
+                var intent=Intent(applicationContext,ProductitemActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(applicationContext,tag.toString(),Toast.LENGTH_SHORT).show()
             }
