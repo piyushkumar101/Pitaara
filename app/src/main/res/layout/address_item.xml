@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f5f5f5">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/default_address"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/header_title">
+
+        <LinearLayout
+            app:layout_constraintWidth_percent="0.8"
+            android:id="@+id/contentContainer"
+            android:layout_width="0dp"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintHorizontal_bias="0"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/tagTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/addressName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/home"
+                android:textColor="#6a6e79"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fullAddressTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="@string/lorem_small"
+                android:textColor="#6b6e77"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/cityNDistrictTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Rohini sec - 9"
+                android:textColor="#6b6e77"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/stateNPinTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Delhi - 110085"
+                android:textColor="#6b6e77"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/stateTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Delhi"
+                android:textColor="#6b6e77"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/mobileTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_light"
+                android:text="Mobile: 9951235520"
+                android:textColor="#6b6e77"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:letterSpacing="0.02"
+            app:layout_constraintStart_toEndOf="@+id/contentContainer"
+            android:fontFamily="@font/poppins_semi_bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
+            android:textColor="#6a6e79"
+            android:textSize="13sp"
+            android:text="HOME"
+            android:id="@+id/tagTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tag1_bg"/>
+
+        <View
+            android:layout_marginTop="20dp"
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaec"
+            app:layout_constraintTop_toBottomOf="@+id/contentContainer" />
+
+        <TextView
+            android:id="@+id/edit_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/black_rounded_btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:text="@string/edit"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/remove_btn"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintWidth_max="200dp"
+            app:layout_constraintWidth_percent="0.4"
+            tools:targetApi="o" />
+
+        <View
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_btn"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="#eaeaec"/>
+
+        <TextView
+            android:id="@+id/remove_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/black_rounded_btn"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:text="@string/remove"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edit_btn"
+            app:layout_constraintTop_toTopOf="@+id/edit_btn"
+            app:layout_constraintWidth_max="200dp"
+            app:layout_constraintWidth_percent="0.4"
+            tools:targetApi="o" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

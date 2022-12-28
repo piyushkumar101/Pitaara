@@ -128,7 +128,7 @@
                 android:text="@string/buy_now"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@+id/add_to_cart_btn"
+                app:layout_constraintEnd_toStartOf="@+id/remove_btn"
                 app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productDesc"
@@ -137,7 +137,7 @@
                 tools:targetApi="o" />
 
             <TextView
-                android:id="@+id/add_to_cart_btn"
+                android:id="@+id/remove_btn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:autoSizeTextType="uniform"

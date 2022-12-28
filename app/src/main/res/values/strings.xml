@@ -84,6 +84,10 @@
     <string name="us">United States</string>
     <string name="currency">Currency</string>
     <string name="usd">$ (USD)</string>
+    <string name="default_address">DEFAULT ADDRESS</string>
+    <string name="home">Home</string>
+    <string name="edit">EDIT</string>
+    <string name="remove">REMOVE</string>
 
 
     <style name="lorem">lorem</style>
