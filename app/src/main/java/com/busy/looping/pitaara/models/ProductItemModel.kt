@@ -1,4 +1,4 @@
-package com.busy.looping.pitaara.Adpter
+package com.busy.looping.pitaara.models
 
 data class ProductItemModel(
     var imageUrl:String,

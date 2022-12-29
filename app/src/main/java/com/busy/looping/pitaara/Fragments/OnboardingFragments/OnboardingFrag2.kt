@@ -6,17 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.busy.looping.pitaara.R
+import com.busy.looping.pitaara.databinding.FragmentOnboardingFrag1Binding
+import com.busy.looping.pitaara.databinding.FragmentOnboardingFrag2Binding
 
 
 class OnboardingFrag2 : Fragment() {
     private var bundle: Bundle? = null
 
-    class Keys {
-        companion object {
-            const val imgRes = "GenOnboardingFragImgRes"
-        }
-    }
-
+    var _binding: FragmentOnboardingFrag2Binding?=null
+    val binding get() = _binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -29,15 +27,13 @@ class OnboardingFrag2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_onboarding_frag1, container, false)
+       _binding= FragmentOnboardingFrag2Binding.inflate(layoutInflater, container, false)
+
+        binding?.fab?.setOnClickListener {
+            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.OnBoardingFrgementView,OnboardingFrag3())?.commitNow()
+        }
+        return binding?.root
     }
 
-    companion object {
 
-        @JvmStatic
-        fun newInstance(bundle: Bundle) =
-            OnboardingFrag2().apply {
-                arguments = bundle
-            }
-    }
 }

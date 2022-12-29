@@ -16,9 +16,38 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_configuration"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pitaara">
+        <activity
+            android:name=".Activities.Otpfields"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.OtpActivity"
+            android:exported="false"
+            android:label="@string/title_activity_otp"
+            android:theme="@style/Theme.Pitaara.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activities.ProductitemActivity"
             android:exported="false">
@@ -50,6 +79,9 @@
             android:name=".Activities.AddressScreen"
             android:exported="false" />
         <activity
+            android:name=".Activities.RegistrationScreen"
+            android:exported="false" />
+        <activity
             android:name=".Activities.CartScreen"
             android:exported="false" />
         <activity
@@ -69,13 +101,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

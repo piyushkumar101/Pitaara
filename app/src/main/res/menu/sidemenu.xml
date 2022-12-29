@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group
+    android:id="@+id/group1">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/ic_baseline_home_24"/>
+</group>
+    <group
+        android:id="@+id/group2">
+        <item
+            android:id="@+id/whishlist"
+            android:title="Whislist"
+            android:icon="@drawable/ic_bag"/>
+    </group>
+    <group
+        android:id="@+id/group3">
+        <item
+            android:id="@+id/FQUS"
+            android:title="FQS"
+            android:icon="@drawable/ic_bag"/>
+    </group>
+    <group
+        android:id="@+id/group4">
+        <item
+            android:id="@+id/Helpsupport"
+            android:title="Help and support"
+            android:icon="@drawable/ic_bag"/>
+    </group>
+    <group
+        android:id="@+id/group5">
+        <item
+            android:id="@+id/Aboutus"
+            android:title="About us"
+            android:icon="@drawable/ic_profile"/>
+    </group>
+
+</menu>

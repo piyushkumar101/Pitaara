@@ -23,6 +23,9 @@
     <style name="PoppinsTextViewStyle"  parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
+    <style name="removeElevation" parent="android:Theme.Holo.Light">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 
     <style name="CheckboxTheme" parent="@style/Widget.AppCompat.CompoundButton.CheckBox">
         <item name="materialThemeOverlay">@style/ThemeOverlay.CheckBox</item>

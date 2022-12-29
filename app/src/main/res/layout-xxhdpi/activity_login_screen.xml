@@ -118,12 +118,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/forgotPassword"
         android:layout_below="@id/pwdContainer"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:text="@string/forgot_your_password"
         android:textColor="#F7F8F8" />
 
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:id="@+id/loginwithMobile"
+        android:text="Login With Mobile number"
+        android:textColor="@color/white"
+        android:layout_marginTop="50dp"
+        app:cornerRadius="99dp"
+        android:layout_below="@id/pwdContainer"
+        android:backgroundTint="#000000"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:id="@+id/bottom_container"

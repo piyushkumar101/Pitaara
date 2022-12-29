@@ -18,10 +18,11 @@
 
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
-        <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent</item>
+        <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent
+        </item>
     </style>
 
-    <style name="PoppinsTextViewStyle"  parent="android:Widget.TextView">
+    <style name="PoppinsTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
@@ -39,4 +40,23 @@
         <item name="android:minHeight">32dip</item>
         <item name="android:maxHeight">32dip</item>
     </style>
+
+    <style name="removeElevation" parent="android:Theme.Holo.Light">
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MyAppbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="showAsAction">ifRoom</item>
+        <item name="titleTextStyle"></item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Theme.Pitaara.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Pitaara.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Pitaara.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

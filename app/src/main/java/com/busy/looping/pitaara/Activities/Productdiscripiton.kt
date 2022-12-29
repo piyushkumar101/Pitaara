@@ -18,6 +18,14 @@ class Productdiscripiton : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivityProductdiscripitonBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        var intent=intent
+        var productdec=intent.getStringExtra("descripation")
+        var rating=intent.getStringExtra("rating")
+        var price=intent.getStringExtra("price")
+        binding.tvRating.text=rating.toString()
+        binding.tvDesc.text=productdec.toString()
+        binding.tvDolar.text="$ "+price.toString()
+        Toast.makeText(this,productdec.toString(),Toast.LENGTH_SHORT).show()
         setGoeswithLikerecyclview()
         setMoreLikerecycleview()
         binding.btnAddtocart.setOnClickListener {
