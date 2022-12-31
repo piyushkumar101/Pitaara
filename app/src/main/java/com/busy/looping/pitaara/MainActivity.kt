@@ -6,14 +6,15 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
+import android.view.inputmethod.EditorInfo
+import android.widget.TextView.OnEditorActionListener
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.busy.looping.pitaara.Activities.ProductitemActivity
+import com.busy.looping.pitaara.Activities.CartScreen
 import com.busy.looping.pitaara.Adpter.Categories
 import com.busy.looping.pitaara.Adpter.CategoriesSingleItem
 import com.busy.looping.pitaara.Adpter.SilderApter
@@ -21,12 +22,9 @@ import com.busy.looping.pitaara.baseactivity.BaseActivity
 import com.busy.looping.pitaara.databinding.ActivityMainBinding
 import com.busy.looping.pitaara.gobal.Constance
 import com.busy.looping.pitaara.models.CategoryModel
-import com.busy.looping.pitaara.models.SingleCategory
 import com.busy.looping.pitaara.retrofit.RetrofitResponse
 import com.busy.looping.pitaara.retrofit.URL
-import com.google.gson.Gson
 import com.google.gson.JsonObject
-import org.json.JSONObject
 
 
 class MainActivity : BaseActivity() {
@@ -62,29 +60,36 @@ class MainActivity : BaseActivity() {
         toogle.syncState()
         binding.drawLayout.closeDrawer(GravityCompat.START)
        supportFragmentManager.beginTransaction().replace(R.id.framentContainer,HomeFrgement()).commitNow()
+        binding.etSearch.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                var jsonObject=JsonObject()
+               callWb(this,Constance.BASE_URL+URL.GET_PRODUCTBYTAG+binding.etSearch.toString(),Constance.GET,jsonObject,
+               object :RetrofitResponse{
+                   override fun onResponse(
+                       response: String?,
+                       methodName: String?,
+                       responseCode: Int
+                   ) {
+                       Log.d("seachResponse=====",response.toString())
+                   }
+
+                   override fun onResponseFail(methodName: String?, responseCode: Int) {
+                       TODO("Not yet implemented")
+                   }
+
+               })
+                return@OnEditorActionListener true
+            }
+            false
+        })
 //        setViewPagerBanners()
 //        setCategoryRecyclview()
 //        setMostPopularRecycleview()
 //        setTopofferRecycleview()
 //        setLimitedOfferRecycleview()
-            var json=JsonObject()
-
-        callWb(this,Constance.BASE_URL+URL.GET_PRODUCT+"22",Constance.GET,json,object :RetrofitResponse{
-            override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
-              //  val resJSNON = JSONObject(response!!)
-                Log.d("MYEMAIL",response.toString())
-
-                var testMode= Gson().fromJson(response, SingleCategory::class.java)
-                Log.d("TESTMODEL====",testMode.toString())
-            }
 
 
 
-            override fun onResponseFail(methodName: String?, responseCode: Int) {
-
-            }
-
-        })
 
 
 //        call.enqueue(object :Callback<ResponseBody?>{
@@ -278,5 +283,15 @@ class MainActivity : BaseActivity() {
         super.onCreateOptionsMenu(menu)
         getMenuInflater().inflate(R.menu.appbarmenu, menu);
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+         super.onOptionsItemSelected(item)
+        if(item.itemId==R.id.appbar_bag)
+        {
+            var intent=Intent(this,CartScreen::class.java)
+            startActivity(intent)
+        }
+        return  true
     }
 }

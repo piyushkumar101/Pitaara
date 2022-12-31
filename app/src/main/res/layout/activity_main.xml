@@ -58,6 +58,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@null"
+            android:id="@+id/etSearch"
+            android:imeOptions="actionSearch"
             android:fontFamily="@font/poppins_regular"
             android:hint="@string/search_main_hint"
             android:inputType="textCapWords"

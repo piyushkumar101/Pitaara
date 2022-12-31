@@ -12,6 +12,7 @@ import com.busy.looping.pitaara.R
 import com.busy.looping.pitaara.baseactivity.BaseActivity
 import com.busy.looping.pitaara.databinding.ActivityProductitemBinding
 import com.busy.looping.pitaara.gobal.Constance
+import com.busy.looping.pitaara.itemdecoration.RecyclviewItemDecoration
 import com.busy.looping.pitaara.models.SingleCategory
 import com.busy.looping.pitaara.retrofit.RetrofitResponse
 import com.busy.looping.pitaara.retrofit.URL
@@ -73,9 +74,12 @@ class ProductitemActivity : BaseActivity() {
 
                 var tempmodel:SingleCategory=infoitemList[tag]
                 var intent= Intent(applicationContext,Productdiscripiton::class.java)
+                intent.putExtra("name",tempmodel.name.toString())
+                intent.putExtra("imageUrl",tempmodel.image)
                 intent.putExtra("rating",tempmodel.rating.toString())
                 intent.putExtra("descripation",tempmodel.des.toString())
                 intent.putExtra("price",tempmodel.price.toString())
+                intent.putExtra("MRP",tempmodel.mrp.toString())
                 startActivity(intent)
             }
         })
@@ -86,7 +90,7 @@ class ProductitemActivity : BaseActivity() {
         dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.recyclview_divider))
 
         binding.recyclerViewItems.layoutManager=GridLayoutManager(this,2)
-        binding.recyclerViewItems.addItemDecoration(dividerItemDecoration)
+        binding.recyclerViewItems.addItemDecoration(RecyclviewItemDecoration(25))
         binding.recyclerViewItems.adapter=itemAdpter
     }
 }

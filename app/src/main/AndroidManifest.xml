@@ -21,6 +21,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pitaara">
         <activity
+            android:name=".Activities.AddaddressActivtiy"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activities.RecyclviewAddressActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Activities.Otpfields"
             android:exported="false">
             <meta-data
@@ -74,9 +88,6 @@
             android:exported="false" />
         <activity
             android:name=".Activities.NotificationsScreen"
-            android:exported="false" />
-        <activity
-            android:name=".Activities.AddressScreen"
             android:exported="false" />
         <activity
             android:name=".Activities.RegistrationScreen"

@@ -1,17 +1,22 @@
 package com.busy.looping.pitaara.Activities
-import android.content.Intent
+import android.R
+import android.content.SharedPreferences
+import android.graphics.Paint
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.busy.looping.pitaara.Adpter.Categories
 import com.busy.looping.pitaara.databinding.ActivityProductdiscripitonBinding
+import com.busy.looping.pitaara.models.CartItemModel
 import com.busy.looping.pitaara.models.CategoryModel
 
 class Productdiscripiton : AppCompatActivity() {
     lateinit var binding:ActivityProductdiscripitonBinding
     lateinit var moreLikeAdpter:Categories;
     lateinit var goeswithLikeAdpter:Categories;
+    var size= arrayOf("L","XXL","XXXL")
     var morelikeList=ArrayList<CategoryModel>()
     var goeswithlikeList=ArrayList<CategoryModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,18 +24,39 @@ class Productdiscripiton : AppCompatActivity() {
         binding= ActivityProductdiscripitonBinding.inflate(layoutInflater)
         setContentView(binding.root)
         var intent=intent
+        var name= intent.getStringExtra("name")
+      var imageUrl=  intent.getStringExtra("imageUrl")
         var productdec=intent.getStringExtra("descripation")
         var rating=intent.getStringExtra("rating")
         var price=intent.getStringExtra("price")
+        var MRP=intent.getStringExtra("MRP")
         binding.tvRating.text=rating.toString()
         binding.tvDesc.text=productdec.toString()
-        binding.tvDolar.text="$ "+price.toString()
+        binding.tvDolar.text="₹"+price.toString()
+        binding.tvMrp.text="₹"+MRP.toString()
+        binding.tvMrp.paintFlags= binding.tvMrp.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG
         Toast.makeText(this,productdec.toString(),Toast.LENGTH_SHORT).show()
+
+        val adapter = ArrayAdapter(this,
+            R.layout.simple_spinner_item, size)
+        binding.selectSize.adapter=adapter
         setGoeswithLikerecyclview()
         setMoreLikerecycleview()
+
         binding.btnAddtocart.setOnClickListener {
-            var intent= Intent(this,CartScreen::class.java)
-            startActivity(intent)
+            CartScreen.cartlist.add(
+                CartItemModel("https://i.pinimg.com/564x/b3/f2/6b/b3f26b0f5b2484cbbd6dd656faf09757.jpg",
+                name.toString(),"subheading",productdec.toString() ,price.toString())
+            )
+
+
+//            var intent= Intent(this,CartScreen::class.java)
+//            intent.putExtra("name",name)
+//            intent.putExtra("imageUrl",imageUrl)
+//            intent.putExtra("productdec",productdec)
+//            intent.putExtra("rating",rating)
+//            intent.putExtra("price",price)
+//            startActivity(intent)
         }
 
     }

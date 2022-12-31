@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/poppins_extra_light"
-            android:text="@string/app_name"
+            android:text="@string/suprita"
             android:textColor="#980000"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"

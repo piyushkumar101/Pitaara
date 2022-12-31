@@ -24,7 +24,7 @@ class ProductItemAdpter(
       Glide.with(context).load("https://i.pinimg.com/564x/b3/f2/6b/b3f26b0f5b2484cbbd6dd656faf09757.jpg").into(holder.binding.productImg)
         holder.binding.productHeading.text=items.name.toString()
         holder.binding.ratingTxt.text=items.rating.toString()
-        holder.binding.productPrice.text="$${items.price.toString()}"
+        holder.binding.productPrice.text="₹${items.price.toString()}"
         holder.binding.productDesc.text=items.des.toString()
         holder.binding.productDesc.maxLines=2
         holder.binding.cardItem.setOnClickListener {

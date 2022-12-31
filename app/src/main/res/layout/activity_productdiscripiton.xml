@@ -86,6 +86,12 @@
                     android:src="@drawable/banner_sample" />
 
             </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
             <View
                 android:layout_width="110dp"
                 android:layout_height="8dp"
@@ -102,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:id="@+id/tvRating"
+
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintEnd_toStartOf="@id/tvRating"
                 android:fontFamily="@font/inter_regular"
@@ -134,13 +141,24 @@
                 android:fontFamily="@font/poppins_regular"
                app:layout_constraintTop_toBottomOf="@id/banner_main"
                 android:text="$ 10"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:id="@+id/tvMrp"
+                app:layout_constraintTop_toBottomOf="@id/tvDolar"
+                app:layout_constraintStart_toStartOf="@id/tvDolar"
+                app:layout_constraintEnd_toEndOf="@id/tvDolar"
+                android:textColor="@color/black"
+                android:text="MRP PRICE"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tvDesc"
                     android:maxLines="4"
                     android:gravity="start"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="30dp"
                     android:layout_marginStart="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     android:layout_marginRight="16dp"
@@ -150,6 +168,30 @@
                     app:layout_constraintTop_toBottomOf="@id/tvRating"
                     app:layout_constraintStart_toEndOf="parent"/>
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDesc"
+                android:text="Select Size"
+                android:id="@+id/tvSelect"
+                android:textColor="@color/black"/>
+            <Spinner
+                android:id="@+id/selectSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black"
+                android:entries="@array/Size"
+               app:layout_constraintStart_toEndOf="@id/tvSelect"
+                app:layout_constraintTop_toBottomOf="@id/tvDesc"
+                />
+
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -158,7 +200,7 @@
                 android:background="@color/black"
                 android:id="@+id/smallWidth"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDesc"
+                app:layout_constraintTop_toBottomOf="@id/selectSize"
                 android:layout_marginTop="35dp"
                 />
             <androidx.constraintlayout.widget.Guideline

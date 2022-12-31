@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Sutpitara</string>
+    <string name="suprita">Sut pitaara</string>
     <string name="desc_splash">Shop Indian Wears</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -101,4 +102,11 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string-array name="Size">
+        <item>L</item>
+        <item>XL</item>
+        <item>XXL</item>
+        <item>XXXL</item>
+    </string-array>
 </resources>

@@ -26,12 +26,15 @@ class CartItem(
         holder.binding.headingTxt.text=cartItem.heading
         holder.binding.subHeadingTxt.text=cartItem.subheading
         holder.binding.desc.text=cartItem.decripition
-        holder.binding.amountTxt.text="$${10}"
+        holder.binding.amountTxt.text="$${cartItem.price}"
         holder.binding.noItemsTxt.text=item.toString()
         holder.binding.incrementBtn.setOnClickListener {
             item=item+1;
+            cartItem.price=(cartItem.price.toInt() *item.toInt()).toString()
             holder.binding.noItemsTxt.text=item.toString()
+            holder.binding.amountTxt.text="$${cartItem.price}"
         }
+
         holder.binding.decrementBtn.setOnClickListener {
             if(item==0)
             {

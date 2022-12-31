@@ -15,7 +15,7 @@ class WhistListAdpter: RecyclerView.Adapter<WhistListViewHolder>() {
 
     override fun onBindViewHolder(holder: WhistListViewHolder, position: Int) {
          holder.binding.buyNowBtn.setOnClickListener {
-
+           
          }
     }
 
