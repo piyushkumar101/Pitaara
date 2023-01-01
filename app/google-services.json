@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1043240235710",
+    "project_id": "sut-pitaara",
+    "storage_bucket": "sut-pitaara.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043240235710:android:0a68e556d01d03e90a24ef",
+        "android_client_info": {
+          "package_name": "com.busy.looping.pitaara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043240235710-ab94nbnuv19v26e7mvi4ucnv0bmjpl8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.busy.looping.pitaara",
+            "certificate_hash": "4d90969ce421659d3e7a8cff4b0c687962b3b4ab"
+          }
+        },
+        {
+          "client_id": "1043240235710-5qeivqd4g6su6p7qav6h6m7m9gpv3vhu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjTdcbJQxiHRH_o138ibIyimX0Cq5jG28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043240235710-5qeivqd4g6su6p7qav6h6m7m9gpv3vhu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
