@@ -22,8 +22,11 @@ import com.busy.looping.pitaara.baseactivity.BaseActivity
 import com.busy.looping.pitaara.databinding.ActivityMainBinding
 import com.busy.looping.pitaara.gobal.Constance
 import com.busy.looping.pitaara.models.CategoryModel
+import com.busy.looping.pitaara.models.GetProdcutModel
+import com.busy.looping.pitaara.models.SingleCategory
 import com.busy.looping.pitaara.retrofit.RetrofitResponse
 import com.busy.looping.pitaara.retrofit.URL
+import com.google.gson.Gson
 import com.google.gson.JsonObject
 
 
@@ -60,6 +63,24 @@ class MainActivity : BaseActivity() {
         toogle.syncState()
         binding.drawLayout.closeDrawer(GravityCompat.START)
        supportFragmentManager.beginTransaction().replace(R.id.framentContainer,HomeFrgement()).commitNow()
+        var jsonObject=JsonObject()
+        callWb(this,Constance.BASE_URL+URL.GET_ALLPRODUCTSBYCATEGORY,Constance.GET,jsonObject,object :RetrofitResponse{
+            override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
+                var jsonlist=Gson().fromJson(response,Array<SingleCategory>::class.java).asList()
+                var model=Gson().toJson(response,SingleCategory::class.java)
+                Toast.makeText(this@MainActivity,response.toString(),Toast.LENGTH_SHORT).show()
+
+//                var infoitemList = Gson().fromJson(response,Array<GetProdcutModel>::class.java).asList()
+                Log.d("TESTMODELISTTT====",response.toString())
+
+
+            }
+
+            override fun onResponseFail(methodName: String?, responseCode: Int) {
+
+            }
+
+        })
         binding.etSearch.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 var jsonObject=JsonObject()

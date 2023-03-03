@@ -13,6 +13,7 @@ import com.busy.looping.pitaara.baseactivity.BaseActivity
 import com.busy.looping.pitaara.databinding.ActivityProductitemBinding
 import com.busy.looping.pitaara.gobal.Constance
 import com.busy.looping.pitaara.itemdecoration.RecyclviewItemDecoration
+import com.busy.looping.pitaara.models.ProductItemModel
 import com.busy.looping.pitaara.models.SingleCategory
 import com.busy.looping.pitaara.retrofit.RetrofitResponse
 import com.busy.looping.pitaara.retrofit.URL
@@ -31,10 +32,10 @@ class ProductitemActivity : BaseActivity() {
         callWb(this,Constance.BASE_URL+URL.GET_ALLPRODUCTSBYCATEGORY,Constance.GET,jsonObject,object :RetrofitResponse{
             override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
               Toast.makeText(this@ProductitemActivity,response.toString(),Toast.LENGTH_SHORT).show()
+               var infoitemList=Gson().fromJson(response,Array<SingleCategory>::class.java).asList()
+                 setItemRecyclviewAdpter(infoitemList)
 
-                var infoitemList = Gson().fromJson(response,Array<SingleCategory>::class.java).asList()
-                Log.d("TESTMODELISTTT====",infoitemList.toString())
-                setItemRecyclviewAdpter(infoitemList)
+
 
             }
 
@@ -48,26 +49,7 @@ class ProductitemActivity : BaseActivity() {
     }
     fun setItemRecyclviewAdpter(infoitemList: List<SingleCategory>)
     {
-//       itemList.add(
-//           ProductItemModel("https://i.pinimg.com/564x/b3/f2/6b/b3f26b0f5b2484cbbd6dd656faf09757.jpg",
-//       "Product Name","4.5","10","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-//       )
-//        itemList.add(
-//            ProductItemModel("https://i.pinimg.com/564x/b3/f2/6b/b3f26b0f5b2484cbbd6dd656faf09757.jpg",
-//            "Product Name","4.5","10","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-//        )
-//        itemList.add(
-//            ProductItemModel("https://i.pinimg.com/564x/b3/f2/6b/b3f26b0f5b2484cbbd6dd656faf09757.jpg",
-//            "Product Name","4.5","10","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-//        )
-//        itemList.add(
-//            ProductItemModel("https://i.pinimg.com/564x/b3/f2/6b/b3f26b0f5b2484cbbd6dd656faf09757.jpg",
-//            "Product Name","4.5","10","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-//        )
-//        itemList.add(
-//            ProductItemModel("https://i.pinimg.com/564x/b3/f2/6b/b3f26b0f5b2484cbbd6dd656faf09757.jpg",
-//            "Product Name","4.5","10","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-//        )
+
         itemAdpter= ProductItemAdpter(this, infoitemList,object:ProductItemAdpter.ItemClickListener{
             override fun onItemListener(tag: Int) {
                 super.onItemListener(tag)
