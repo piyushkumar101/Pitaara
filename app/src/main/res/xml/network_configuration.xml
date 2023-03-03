@@ -1,0 +1,14 @@
+<network-security-config>
+    <!--    <domain-config>-->
+    <!--        <domain includeSubdomains="true">sevashop.in</domain>-->
+    <!--        <trust-anchors>-->
+    <!--            <certificates src="@raw/cert_sevashop_in" />-->
+    <!--        </trust-anchors>-->
+    <!--    </domain-config>-->
+
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

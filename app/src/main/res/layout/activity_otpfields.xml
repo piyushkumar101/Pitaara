@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7EEDA"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:paddingHorizontal="28dp"
+
+    tools:context=".Activities.RegistrationScreen">
+
+    <LinearLayout
+        android:layout_above="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/verify_your_number"
+            android:textColor="#980000"
+            android:textSize="20sp"
+            tools:targetApi="o" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="15sp"
+            android:text="Code is sent to ∗ ∗ ∗ ∗ ∗ ∗ ∗ 9 3 2"
+            android:textColor="@color/black"/>
+        <com.chaos.view.PinView
+            android:id="@+id/pinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:itemBackground="@color/primaryBg"
+            android:lineHeight="15dp"
+            android:textColor="@color/black"
+            app:itemCount="6"
+            app:itemRadius="15dp"
+            app:itemSpacing="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.431"
+            app:viewType="rectangle"
+            tools:ignore="MissingConstraints" />
+
+<!--        <LinearLayout-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:weightSum="6"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+
+<!--            <EditText-->
+<!--                android:cursorVisible="false"-->
+<!--                android:inputType="numberPassword"-->
+<!--                android:textSize="23sp"-->
+<!--                android:textColor="#534428"-->
+<!--                android:maxLines="1"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingVertical="20dp"-->
+<!--                android:background="@drawable/otp_input_bg"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--            <EditText-->
+<!--                android:cursorVisible="false"-->
+<!--                android:textSize="23sp"-->
+<!--                android:maxLines="1"-->
+<!--                android:textColor="#534428"-->
+<!--                android:inputType="numberPassword"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingVertical="20dp"-->
+<!--                android:background="@drawable/otp_input_bg"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--            <EditText-->
+<!--                android:cursorVisible="false"-->
+<!--                android:textSize="23sp"-->
+<!--                android:maxLines="1"-->
+<!--                android:textColor="#534428"-->
+<!--                android:inputType="numberPassword"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingVertical="20dp"-->
+<!--                android:background="@drawable/otp_input_bg"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--            <EditText-->
+<!--                android:cursorVisible="false"-->
+<!--                android:inputType="numberPassword"-->
+<!--                android:textSize="23sp"-->
+<!--                android:textColor="#534428"-->
+<!--                android:maxLines="1"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingVertical="20dp"-->
+<!--                android:background="@drawable/otp_input_bg"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--            <EditText-->
+<!--                android:cursorVisible="false"-->
+<!--                android:inputType="numberPassword"-->
+<!--                android:textSize="23sp"-->
+<!--                android:maxLines="1"-->
+<!--                android:textColor="#534428"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingVertical="20dp"-->
+<!--                android:background="@drawable/otp_input_bg"-->
+<!--                android:layout_marginEnd="10dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+<!--            <EditText-->
+<!--                android:cursorVisible="false"-->
+<!--                android:inputType="numberPassword"-->
+<!--                android:textSize="23sp"-->
+<!--                android:maxLines="1"-->
+<!--                android:textColor="#534428"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingVertical="20dp"-->
+<!--                android:background="@drawable/otp_input_bg"-->
+<!--                android:layout_weight="1"-->
+<!--                android:fontFamily="@font/poppins_bold"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/didn_t_recieved_code"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/req_again"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_code_via"/>
+
+            <TextView
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/call"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/btnSignin"
+            android:background="@drawable/red_btn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btText"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/verify_create_account"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            android:weightSum="10">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1.6dp"
+                android:layout_weight="5"
+                android:background="@drawable/horizontal_div_1" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:text="@string/or"
+                android:textColor="#1D1617"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1.6dp"
+                android:layout_weight="5"
+                android:background="@drawable/horizontal_div_1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="invisible">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/round_stroke_btn_white_bg"
+                android:padding="18dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_google" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_stroke_btn_white_bg"
+                android:padding="18dp">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_facebook" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/already_have_an_account"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/loginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textColor="@color/primaryRed"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

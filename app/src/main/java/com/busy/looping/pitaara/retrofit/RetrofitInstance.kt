@@ -87,21 +87,6 @@ object RetrofitClient {
     }
 }
 
-//object RetrofitInstance {
-//    val api:ApiInterface
-//    init{
-//        val retrofit=Retrofit.Builder()
-//            .baseUrl(Constance.BASE_URL)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//        api=retrofit.create(ApiInterface::class.java)
-//
-//    }
-//    interface ApiInterface{
-//           @GET("get_produc/22")
-//        fun getDetails(): Call<ResponseBody?>
-//
-//    }
-//}
+
 
 

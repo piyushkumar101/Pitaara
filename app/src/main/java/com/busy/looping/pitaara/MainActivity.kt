@@ -64,6 +64,7 @@ class MainActivity : BaseActivity() {
         binding.drawLayout.closeDrawer(GravityCompat.START)
        supportFragmentManager.beginTransaction().replace(R.id.framentContainer,HomeFrgement()).commitNow()
         var jsonObject=JsonObject()
+
         callWb(this,Constance.BASE_URL+URL.GET_ALLPRODUCTSBYCATEGORY,Constance.GET,jsonObject,object :RetrofitResponse{
             override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
                 var jsonlist=Gson().fromJson(response,Array<SingleCategory>::class.java).asList()
