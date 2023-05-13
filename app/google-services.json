@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "1043240235710",
-    "project_id": "sut-pitaara",
-    "storage_bucket": "sut-pitaara.appspot.com"
+    "project_number": "158895187149",
+    "project_id": "sutpitaara-1a964",
+    "storage_bucket": "sutpitaara-1a964.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1043240235710:android:0a68e556d01d03e90a24ef",
+        "mobilesdk_app_id": "1:158895187149:android:cf7271a4f63e0d7de0f584",
         "android_client_info": {
           "package_name": "com.busy.looping.pitaara"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1043240235710-ab94nbnuv19v26e7mvi4ucnv0bmjpl8g.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.busy.looping.pitaara",
-            "certificate_hash": "4d90969ce421659d3e7a8cff4b0c687962b3b4ab"
-          }
-        },
-        {
-          "client_id": "1043240235710-5qeivqd4g6su6p7qav6h6m7m9gpv3vhu.apps.googleusercontent.com",
+          "client_id": "158895187149-iks15pki11pdicv4864netq8qe2vudmh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAjTdcbJQxiHRH_o138ibIyimX0Cq5jG28"
+          "current_key": "AIzaSyCUnVfzB-bmYDaXg41v4Q1hPF50SmgXFdM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1043240235710-5qeivqd4g6su6p7qav6h6m7m9gpv3vhu.apps.googleusercontent.com",
+              "client_id": "158895187149-iks15pki11pdicv4864netq8qe2vudmh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

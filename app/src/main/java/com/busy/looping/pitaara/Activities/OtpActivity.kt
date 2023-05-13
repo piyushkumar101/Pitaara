@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.busy.looping.pitaara.databinding.ActivityOtpBinding
 
@@ -17,12 +18,14 @@ class OtpActivity : AppCompatActivity() {
         binding.generateOtp.setOnClickListener {
             if(binding.etMob.text.toString().isEmpty()&&binding.etMob.text.length!=10)
             {
-                Toast.makeText(this,"Please Enter valide number",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Please Enter valid number",Toast.LENGTH_SHORT).show()
             }
             else{
                 var intent=Intent(this,Otpfields::class.java)
-                intent.putExtra("isFromLogin",true)
+                intent.putExtra("isFromLogin",1)
                 intent.putExtra("mno",binding.etMob.text.toString())
+                Log.d("myapp",binding.etMob.text.toString())
+
                 startActivity(intent)
             }
 

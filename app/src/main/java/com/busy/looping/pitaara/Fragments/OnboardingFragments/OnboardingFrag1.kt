@@ -11,18 +11,28 @@ import com.busy.looping.pitaara.databinding.FragmentOnboardingFrag1Binding
 
 class OnboardingFrag1 : Fragment() {
 
-    var _binding: FragmentOnboardingFrag1Binding?=null
+    var _binding: FragmentOnboardingFrag1Binding? = null
     val binding get() = _binding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-      _binding =FragmentOnboardingFrag1Binding.inflate(layoutInflater, container, false)
+        _binding = FragmentOnboardingFrag1Binding.inflate(layoutInflater, container, false)
         binding?.getStartedBtn?.setOnClickListener {
-            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.OnBoardingFrgementView,OnboardingFrag2())?.commitNow()
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.OnBoardingFrgementView, OnboardingFrag2())?.commitNow()
         }
         return binding?.root
+    }
+    companion object {
+        fun newInstance(bundle: Bundle): OnboardingFrag2 {
+            val fragment = OnboardingFrag2()
+            fragment.arguments = bundle
+            return fragment
+        }
+
+
     }
 
 

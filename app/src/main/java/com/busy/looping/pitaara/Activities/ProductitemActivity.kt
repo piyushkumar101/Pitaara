@@ -21,58 +21,68 @@ import com.google.gson.Gson
 import com.google.gson.JsonObject
 
 class ProductitemActivity : BaseActivity() {
-   lateinit var binding:ActivityProductitemBinding
-   lateinit var  itemAdpter: ProductItemAdpter;
-    var itemList=ArrayList<SingleCategory>()
+    lateinit var binding: ActivityProductitemBinding
+    lateinit var itemAdpter: ProductItemAdpter;
+    var itemList = ArrayList<SingleCategory>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityProductitemBinding.inflate(layoutInflater)
+        binding = ActivityProductitemBinding.inflate(layoutInflater)
         setContentView(binding.root)
-           var jsonObject=JsonObject()
-        callWb(this,Constance.BASE_URL+URL.GET_ALLPRODUCTSBYCATEGORY,Constance.GET,jsonObject,object :RetrofitResponse{
-            override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
-              Toast.makeText(this@ProductitemActivity,response.toString(),Toast.LENGTH_SHORT).show()
-               var infoitemList=Gson().fromJson(response,Array<SingleCategory>::class.java).asList()
-                 setItemRecyclviewAdpter(infoitemList)
+        var jsonObject = JsonObject()
+        callWb(
+            this,
+            Constance.BASE_URL + URL.GET_ALLPRODUCTSBYCATEGORY,
+            Constance.GET,
+            jsonObject,
+            object : RetrofitResponse {
+                override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
+                    Toast.makeText(
+                        this@ProductitemActivity,
+                        response.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    var infoitemList =
+                        Gson().fromJson(response, Array<SingleCategory>::class.java).asList()
+                    setItemRecyclviewAdpter(infoitemList)
 
 
+                }
 
-            }
+                override fun onResponseFail(methodName: String?, responseCode: Int) {
 
-            override fun onResponseFail(methodName: String?, responseCode: Int) {
+                }
 
-            }
-
-        })
+            })
 
 
     }
-    fun setItemRecyclviewAdpter(infoitemList: List<SingleCategory>)
-    {
 
-        itemAdpter= ProductItemAdpter(this, infoitemList,object:ProductItemAdpter.ItemClickListener{
-            override fun onItemListener(tag: Int) {
-                super.onItemListener(tag)
+    fun setItemRecyclviewAdpter(infoitemList: List<SingleCategory>) {
 
-                var tempmodel:SingleCategory=infoitemList[tag]
-                var intent= Intent(applicationContext,Productdiscripiton::class.java)
-                intent.putExtra("name",tempmodel.name.toString())
-                intent.putExtra("imageUrl",tempmodel.image)
-                intent.putExtra("rating",tempmodel.rating.toString())
-                intent.putExtra("descripation",tempmodel.des.toString())
-                intent.putExtra("price",tempmodel.price.toString())
-                intent.putExtra("MRP",tempmodel.mrp.toString())
-                startActivity(intent)
-            }
-        })
+        itemAdpter =
+            ProductItemAdpter(this, infoitemList, object : ProductItemAdpter.ItemClickListener {
+                override fun onItemListener(tag: Int) {
+                    super.onItemListener(tag)
+
+                    var tempmodel: SingleCategory = infoitemList[tag]
+                    var intent = Intent(applicationContext, Productdiscripiton::class.java)
+                    intent.putExtra("name", tempmodel.name.toString())
+                    intent.putExtra("imageUrl", tempmodel.image)
+                    intent.putExtra("rating", tempmodel.rating.toString())
+                    intent.putExtra("descripation", tempmodel.des.toString())
+                    intent.putExtra("price", tempmodel.price.toString())
+                    intent.putExtra("MRP", tempmodel.mrp.toString())
+                    startActivity(intent)
+                }
+            })
         val dividerItemDecoration = DividerItemDecoration(
             this,
             LinearLayoutManager.HORIZONTAL
         )
         dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.recyclview_divider))
 
-        binding.recyclerViewItems.layoutManager=GridLayoutManager(this,2)
+        binding.recyclerViewItems.layoutManager = GridLayoutManager(this, 2)
         binding.recyclerViewItems.addItemDecoration(RecyclviewItemDecoration(25))
-        binding.recyclerViewItems.adapter=itemAdpter
+        binding.recyclerViewItems.adapter = itemAdpter
     }
 }

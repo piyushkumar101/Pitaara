@@ -6,10 +6,12 @@ import android.os.Bundle
 import com.busy.looping.pitaara.MainActivity
 import com.busy.looping.pitaara.R
 import com.busy.looping.pitaara.databinding.ActivityLoginScreenBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginScreen : AppCompatActivity() {
     lateinit var binding:ActivityLoginScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding=ActivityLoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -17,14 +19,18 @@ class LoginScreen : AppCompatActivity() {
             ?.setOnClickListener {
             var intent= Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
+
         }
         binding.loginBtn.setOnClickListener {
             var intent= Intent(this, RegistrationScreen::class.java)
             startActivity(intent)
+
         }
         binding.loginwithMobile.setOnClickListener {
             var intent= Intent(this, OtpActivity::class.java)
             startActivity(intent)
+
+
         }
 
     }

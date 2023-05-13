@@ -13,56 +13,56 @@ class CartItem(
     var list: ArrayList<CartItemModel>,
     var clickListener: ItemClickListener
 
-): RecyclerView.Adapter<CartItemViewholder>() {
-       var item=1;
+) : RecyclerView.Adapter<CartItemViewholder>() {
+    var item = 1;
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartItemViewholder {
-        val binding= CartRecyclerItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return  CartItemViewholder(binding)
+        val binding =
+            CartRecyclerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CartItemViewholder(binding)
     }
 
     override fun onBindViewHolder(holder: CartItemViewholder, position: Int) {
-      var cartItem=list[position]
+        var cartItem = list[position]
         Glide.with(context).load(cartItem.imageUrl).into(holder.binding.ivCartImage)
-        holder.binding.headingTxt.text=cartItem.heading
-        holder.binding.subHeadingTxt.text=cartItem.subheading
-        holder.binding.desc.text=cartItem.decripition
-        holder.binding.amountTxt.text="$${cartItem.price}"
-        holder.binding.noItemsTxt.text=item.toString()
+        holder.binding.headingTxt.text = cartItem.heading
+        holder.binding.subHeadingTxt.text = cartItem.subheading
+        holder.binding.desc.text = cartItem.decripition
+        holder.binding.amountTxt.text = "$${cartItem.price}"
+        holder.binding.noItemsTxt.text = item.toString()
         holder.binding.incrementBtn.setOnClickListener {
-            item=item+1;
-            cartItem.price=(cartItem.price.toInt() *item.toInt()).toString()
-            holder.binding.noItemsTxt.text=item.toString()
-            holder.binding.amountTxt.text="$${cartItem.price}"
+            item = item + 1;
+            cartItem.price = (cartItem.price.toInt() * item.toInt()).toString()
+            holder.binding.noItemsTxt.text = item.toString()
+            holder.binding.amountTxt.text = "$${cartItem.price}"
         }
 
         holder.binding.decrementBtn.setOnClickListener {
-            if(item==0)
-            {
+            if (item == 0) {
                 list.removeAt(position)
                 notifyItemRemoved(position);
                 notifyItemRangeChanged(position, list.size)
-            }
-            else{
-                item=item-1;
-                holder.binding.noItemsTxt.text=item.toString()
+            } else {
+                item = item - 1;
+                holder.binding.noItemsTxt.text = item.toString()
             }
 
         }
-        holder.binding.cartitems.setOnClickListener{
-          clickListener.onItemListener(position)
+        holder.binding.cartitems.setOnClickListener {
+            clickListener.onItemListener(position)
         }
     }
 
     override fun getItemCount(): Int {
-       return list.size
+        return list.size
     }
-    interface  ItemClickListener
-    {
+
+    interface ItemClickListener {
         fun onItemListener(tag: Int) {
         }
     }
 }
-class CartItemViewholder(val binding: CartRecyclerItemBinding) : RecyclerView.ViewHolder(binding.root)
-{
+
+class CartItemViewholder(val binding: CartRecyclerItemBinding) :
+    RecyclerView.ViewHolder(binding.root) {
 
 }

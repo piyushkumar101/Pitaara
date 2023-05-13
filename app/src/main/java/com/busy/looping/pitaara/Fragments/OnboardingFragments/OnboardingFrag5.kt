@@ -7,42 +7,108 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import com.busy.looping.pitaara.Activities.LoginScreen
 import com.busy.looping.pitaara.MainActivity
 import com.busy.looping.pitaara.R
 import com.busy.looping.pitaara.databinding.FragmentOnboardingFrag4Binding
 import com.busy.looping.pitaara.databinding.FragmentOnboardingFrag5Binding
-
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class OnboardingFrag5 : Fragment() {
-    var _binding: FragmentOnboardingFrag5Binding?=null
-    val binding get() = _binding
-    lateinit var con: Context;
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private var _binding: FragmentOnboardingFrag5Binding? = null
+    private val binding get() = _binding
+    private lateinit var con: Context
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        //activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.OnBoardingFrgementView,OnboardingFrag2())?.commitNow()
-        _binding= FragmentOnboardingFrag5Binding.inflate(layoutInflater, container, false)
+        _binding = FragmentOnboardingFrag5Binding.inflate(inflater, container, false)
+        con = requireContext()
+        auth = FirebaseAuth.getInstance()
+
         binding?.fab?.setOnClickListener {
-         var intent=Intent(con,LoginScreen::class.java)
-            startActivity(intent)
-//            activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.OnBoardingFrgementView,OnboardingFrag5())?.commitNow()
+            val currentUser = auth.currentUser
+//            updateUI(currentUser)
         }
-        return  binding?.root
+
+        binding?.root?.let {
+            startActivity(Intent(con, LoginScreen::class.java))
+            activity?.supportFragmentManager?.beginTransaction()
+                ?.replace(R.id.OnBoardingFrgementView, OnboardingFrag5())?.commitNow()
+        }
+
+        return binding?.root
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        con=context
+//    private fun updateUI(currentUser: FirebaseUser?) {
+//        if (currentUser != null) {
+//            val mainActivityIntent = Intent(con, MainActivity::class.java)
+//            startActivity(mainActivityIntent)
+//        } else {
+//            val loginIntent = Intent(con, LoginScreen::class.java)
+//            startActivity(loginIntent)
+//        }
+//    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
-
-
 }
+
+
+//class OnboardingFrag5 : Fragment() {
+//    var _binding: FragmentOnboardingFrag5Binding? = null
+//    val binding get() = _binding
+//    lateinit var con: Context;
+//    lateinit var auth: FirebaseAuth
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//    }
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        //activity?.supportFragmentManager?.beginTransaction()?.replace(R.id.OnBoardingFrgementView,OnboardingFrag2())?.commitNow()
+//        _binding = FragmentOnboardingFrag5Binding.inflate(layoutInflater, container, false)
+//        binding?.fab?.setOnClickListener {
+//            //    override fun onStart(){
+//            super.onStart()
+//            val currentUser = auth.currentUser
+//            updateUI(currentUser)
+//        }
+//        var intent = Intent(con, LoginScreen::class.java)
+//        startActivity(intent)
+//        activity?.supportFragmentManager?.beginTransaction()
+//            ?.replace(R.id.OnBoardingFrgementView, OnboardingFrag5())?.commitNow()
+//
+//        return binding?.root
+//
+//        fun onAttach(context: Context) {
+//            super.onAttach(context)
+//            con = context
+//        }
+//    }
+//}
+//        fun updateUI(currentUser: FirebaseUser?) {
+//            if (currentUser != null) {
+//                val mainActivityIntent =
+//                startActivity(mainActivityIntent)
+//
+//
+//            } else {
+//                val loginIntent = Intent(this,LoginScreen::class.java)
+//                startActivity(loginIntent)
+//
+//            }
+//        }
+
+
+

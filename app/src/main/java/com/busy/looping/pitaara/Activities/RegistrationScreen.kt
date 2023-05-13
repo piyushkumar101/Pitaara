@@ -15,6 +15,7 @@ class RegistrationScreen : AppCompatActivity() {
         binding.btnRegistration?.setOnClickListener {
             var intent=Intent(this,Otpfields::class.java)
             intent.putExtra("isFromLogin",false)
+            intent.putExtra("mob",binding.mobileTxt?.text.toString())
             startActivity(intent)
         }
 

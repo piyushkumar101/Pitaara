@@ -1,6 +1,7 @@
 package com.busy.looping.pitaara.Activities
 
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,17 +19,22 @@ class Otpfields : AppCompatActivity() {
     lateinit var binding: ActivityOtpfieldsBinding
     lateinit var auth: FirebaseAuth
     private var verificationId: String = "";
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityOtpfieldsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
-        var mob=intent
+        var mno = intent.getStringExtra("mno")
+//        var mob = intent.getStringExtra("mob")
+//        var mno= intent.getStringExtra("mno")
 
+        Log.d("myapp","+91"+ "$mno");
 
         val options = PhoneAuthOptions.newBuilder(auth)
-            .setPhoneNumber("+91${mob.getStringExtra("mno")}")       // Phone number to verify
+            .setPhoneNumber("+91"+ "$mno")
+//            .setPhoneNumber("+91" + "$mno")// Phone number to verify
             .setTimeout(60, TimeUnit.SECONDS) // Timeout and unit
             .setActivity(this)                 // Activity (for callback binding)
             .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -38,6 +44,7 @@ class Otpfields : AppCompatActivity() {
                 }
 
                 override fun onVerificationFailed(p0: FirebaseException) {
+                    Log.d("myapp", p0.toString())
                     Toast.makeText(applicationContext, p0.toString(), Toast.LENGTH_LONG).show()
                 }
 
@@ -60,10 +67,12 @@ class Otpfields : AppCompatActivity() {
                         val intent = Intent(applicationContext,     MainActivity::class.java)
                         intent.putExtra("UID", user)
                         startActivity(intent)
+                        finish()
                     } else {
                         // Sign in failed, display a message and update the UI
                         Log.w(ContentValues.TAG, "signInWithCredential:failure", it.exception)
                         if (it.exception is FirebaseAuthInvalidCredentialsException) {
+                            (Log.e(TAG, "signInWithCredential:failure", it.exception))
                             Toast.makeText(applicationContext, "Otp is wrong", Toast.LENGTH_SHORT)
                                 .show()
                         }

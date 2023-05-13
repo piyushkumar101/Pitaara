@@ -35,5 +35,9 @@ class OnboardingFrag2 : Fragment() {
         return binding?.root
     }
 
-
+    class Keys {
+        companion object {
+            const val imgRes = "imgRes"
+        }
+    }
 }

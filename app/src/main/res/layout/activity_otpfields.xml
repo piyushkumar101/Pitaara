@@ -41,6 +41,7 @@
             android:text="Code is sent to ∗ ∗ ∗ ∗ ∗ ∗ ∗ 9 3 2"
             android:textColor="@color/black"/>
         <com.chaos.view.PinView
+
             android:id="@+id/pinView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

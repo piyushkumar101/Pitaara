@@ -171,6 +171,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
+                android:id="@+id/abc"
                 android:textColorHint="#ADA4A5"
                 android:autofillHints="emailAddress"
                 android:layout_width="0dp"
@@ -178,7 +179,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:background="@null"
                 android:fontFamily="@font/poppins_regular"
-                android:hint="Enter Mobiel number"
+                android:hint="Enter Mobile number"
                 android:inputType="number"
                 android:textSize="17sp"
                 app:layout_constraintBottom_toBottomOf="parent"

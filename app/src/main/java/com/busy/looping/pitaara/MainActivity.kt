@@ -14,7 +14,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import com.busy.looping.pitaara.Activities.CartScreen
+import com.busy.looping.pitaara.Activities.LoginScreen
 import com.busy.looping.pitaara.Adpter.Categories
 import com.busy.looping.pitaara.Adpter.CategoriesSingleItem
 import com.busy.looping.pitaara.Adpter.SilderApter
@@ -22,35 +24,45 @@ import com.busy.looping.pitaara.baseactivity.BaseActivity
 import com.busy.looping.pitaara.databinding.ActivityMainBinding
 import com.busy.looping.pitaara.gobal.Constance
 import com.busy.looping.pitaara.models.CategoryModel
-import com.busy.looping.pitaara.models.GetProdcutModel
 import com.busy.looping.pitaara.models.SingleCategory
 import com.busy.looping.pitaara.retrofit.RetrofitResponse
 import com.busy.looping.pitaara.retrofit.URL
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 
 
 class MainActivity : BaseActivity() {
     lateinit var binding: ActivityMainBinding
+
     lateinit var toogle: ActionBarDrawerToggle
     lateinit var categoryAdpter: CategoriesSingleItem;
-    lateinit var  bannerSilderAdpter: SilderApter
-    lateinit var mostPopularAdpter:Categories;
-    lateinit var topOfferAdpter:Categories;
-    lateinit var  limitedOfferAdpter:Categories;
-     var categoriesList= ArrayList<CategoryModel>()
-    var mostPopularList= ArrayList<CategoryModel>()
-    var topOffersList=ArrayList<CategoryModel>()
-    var limtedOfferList=ArrayList<CategoryModel>()
+    lateinit var bannerSilderAdpter: SilderApter
+    lateinit var mostPopularAdpter: Categories;
+    lateinit var topOfferAdpter: Categories;
+    lateinit var limitedOfferAdpter: Categories;
+    lateinit var auth:FirebaseAuth
+
+    var categoriesList = ArrayList<CategoryModel>()
+    var mostPopularList = ArrayList<CategoryModel>()
+    var topOffersList = ArrayList<CategoryModel>()
+    var limtedOfferList = ArrayList<CategoryModel>()
+
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         val displayMetrics = DisplayMetrics()
         setSupportActionBar(binding.topAppBar)
-        supportActionBar?.elevation= 0F
+        supportActionBar?.elevation = 0F
         setContentView(binding.root)
+        val drawerLayout: DrawerLayout = findViewById(R.id.drawLayout)
+        val navView: NavigationView = findViewById(R.id.sideNav)
         toogle = ActionBarDrawerToggle(
             this,
             binding.drawLayout,
@@ -62,56 +74,77 @@ class MainActivity : BaseActivity() {
         binding.drawLayout.addDrawerListener(toogle)
         toogle.syncState()
         binding.drawLayout.closeDrawer(GravityCompat.START)
-       supportFragmentManager.beginTransaction().replace(R.id.framentContainer,HomeFrgement()).commitNow()
-        var jsonObject=JsonObject()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.logOut -> {
+                    val intent = Intent(this, LoginScreen::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
-        callWb(this,Constance.BASE_URL+URL.GET_ALLPRODUCTSBYCATEGORY,Constance.GET,jsonObject,object :RetrofitResponse{
-            override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
-                var jsonlist=Gson().fromJson(response,Array<SingleCategory>::class.java).asList()
-                var model=Gson().toJson(response,SingleCategory::class.java)
-                Toast.makeText(this@MainActivity,response.toString(),Toast.LENGTH_SHORT).show()
+        supportFragmentManager.beginTransaction().replace(R.id.framentContainer, HomeFrgement())
+            .commitNow()
+        var jsonObject = JsonObject()
+
+        callWb(
+            this,
+            Constance.BASE_URL + URL.GET_ALLPRODUCTSBYCATEGORY,
+            Constance.GET,
+            jsonObject,
+            object : RetrofitResponse {
+                override fun onResponse(response: String?, methodName: String?, responseCode: Int) {
+                    var jsonlist =
+                        Gson().fromJson(response, Array<SingleCategory>::class.java).asList()
+                    var model = Gson().toJson(response, SingleCategory::class.java)
+                    Toast.makeText(this@MainActivity, response.toString(), Toast.LENGTH_SHORT)
+                        .show()
 
 //                var infoitemList = Gson().fromJson(response,Array<GetProdcutModel>::class.java).asList()
-                Log.d("TESTMODELISTTT====",response.toString())
+                    Log.d("TESTMODELISTTT====", response.toString())
 
 
-            }
+                }
 
-            override fun onResponseFail(methodName: String?, responseCode: Int) {
+                override fun onResponseFail(methodName: String?, responseCode: Int) {
 
-            }
+                }
 
-        })
+            })
         binding.etSearch.setOnEditorActionListener(OnEditorActionListener { v, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                var jsonObject=JsonObject()
-               callWb(this,Constance.BASE_URL+URL.GET_PRODUCTBYTAG+binding.etSearch.toString(),Constance.GET,jsonObject,
-               object :RetrofitResponse{
-                   override fun onResponse(
-                       response: String?,
-                       methodName: String?,
-                       responseCode: Int
-                   ) {
-                       Log.d("seachResponse=====",response.toString())
-                   }
+                var jsonObject = JsonObject()
+                callWb(this,
+                    Constance.BASE_URL + URL.GET_PRODUCTBYTAG + binding.etSearch.toString(),
+                    Constance.GET,
+                    jsonObject,
+                    object : RetrofitResponse {
+                        override fun onResponse(
+                            response: String?,
+                            methodName: String?,
+                            responseCode: Int
+                        ) {
+                            Log.d("seachResponse=====", response.toString())
+                        }
 
-                   override fun onResponseFail(methodName: String?, responseCode: Int) {
-                       TODO("Not yet implemented")
-                   }
+                        override fun onResponseFail(methodName: String?, responseCode: Int) {
+                            TODO("Not yet implemented")
+                        }
 
-               })
+                    })
                 return@OnEditorActionListener true
             }
             false
         })
+
+
 //        setViewPagerBanners()
 //        setCategoryRecyclview()
 //        setMostPopularRecycleview()
 //        setTopofferRecycleview()
 //        setLimitedOfferRecycleview()
-
-
-
 
 
 //        call.enqueue(object :Callback<ResponseBody?>{
@@ -130,12 +163,34 @@ class MainActivity : BaseActivity() {
 
     }
 
+    //    override fun onBackPressed() {
+//        super.onBackPressed()
+//        finish()
+//    }
     override fun onBackPressed() {
-        super.onBackPressed()
-        finish()
+        moveTaskToBack(true)
     }
+//    override fun onStart(){
+//        super.onStart()
+//        val currentUser = auth.currentUser
+//        updateUI(currentUser)
+//    }
+//
+//    private fun updateUI(currentUser: FirebaseUser?) {
+//        if(currentUser != null){
+//            val mainActivityIntent = Intent(this,MainActivity::class.java)
+//            startActivity(mainActivityIntent)
+//            finish()
+//
+//        }
+//        else{
+//            val loginIntent = Intent(this,LoginScreen::class.java)
+//            startActivity(loginIntent)
+//            finish()
+//        }
+//    }
 
-//    fun setViewPagerBanners()
+    //    fun setViewPagerBanners()
 //    {
 //       bannerSilderAdpter=SilderApter()
 //        Toast.makeText(this,"CALLED",Toast.LENGTH_SHORT).show()
@@ -308,12 +363,20 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-         super.onOptionsItemSelected(item)
-        if(item.itemId==R.id.appbar_bag)
-        {
-            var intent=Intent(this,CartScreen::class.java)
+        super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.appbar_bag) {
+            var intent = Intent(this, CartScreen::class.java)
             startActivity(intent)
         }
-        return  true
+        if(toogle.onOptionsItemSelected(item)){
+//            var intent = Intent(this, LoginScreen::class.java)
+//            startActivity(intent)
+            return true
+        }
+        return true
     }
+
+
+//
+
 }

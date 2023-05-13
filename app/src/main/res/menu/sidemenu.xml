@@ -35,5 +35,13 @@
             android:title="About us"
             android:icon="@drawable/ic_profile"/>
     </group>
+    <group
+        android:id="@+id/group6">
+        <item
+            android:id="@+id/logOut"
+            android:title="Log Out"
+            android:icon="@drawable/ic_bag"
+            />
+    </group>
 
 </menu>
